@@ -78,11 +78,11 @@
     "sqlAvailabilitySetName": "[concat(variables('sqlNamePrefix'),'-AVSet')]",
     "sqlLBName": "[concat(variables('sqlNamePrefix'),'-ILB')]",
     "sqlLBId": "[resourceId('Microsoft.Network/loadBalancers',variables('sqlLBName'))]",
-    "lbFE1": "[concat(variables('sqlNamePrefix'),'-ilbfe1')]",
-    "lbBE": "[concat(variables('sqlNamePrefix'),'-ilbbe')]",
+    "lbFE1": "[concat(variables('sqlNamePrefix'),'-ILBFE1')]",
+    "lbBE": "[concat(variables('sqlNamePrefix'),'-ILBBE')]",
     "sqlLBFEConfigID1": "[concat(variables('sqllbID'),'/frontendIPConfigurations/',variables('lbFE1'))]",
     "sqlLBBEAddressPoolID": "[concat(variables('sqllbID'),'/backendAddressPools/',variables('lbBE'))]",
-    "sqlAOProbe1": "[concat(variables('sqlNamePrefix'),'ilbp1')]",
+    "sqlAOProbe1": "[concat(variables('sqlNamePrefix'),'-ILBP1')]",
     "sqlLBProbeID1": "[concat(variables('sqllbID'),'/probes/',variables('sqlAOProbe1'))]",
     "deploySqlWitnessShare": "deploySqlWitnessShare",
     "deploySqlWitnessShareId": "[concat('Microsoft.Resources/deployments/', variables('deploySqlWitnessShare'))]",
@@ -91,9 +91,9 @@
     "sqlWitnessVMName": "[concat(parameters('namePrefix'),'-FSW')]",
     "deploySqlAlwaysOn": "deploySqlAlwaysOn",
     "deploySqlAlwaysOnTemplateUrl": "[concat(parameters('_artifactsLocation'),'/nested/deploy-sql-alwayson.json',parameters('_artifactsLocationSasToken'))]",
-    "sqlAOEPName": "[concat(parameters('namePrefix'),'-agep')]",
-    "sqlAOAGName1": "[concat(parameters('namePrefix'),'-ag1')]",
-    "sqlAOListener1": "[concat(parameters('namePrefix'),'-agl1')]"
+    "sqlAOEPName": "[concat(parameters('namePrefix'),'-AGEP')]",
+    "sqlAOAGName1": "[concat(parameters('namePrefix'),'-AG1')]",
+    "sqlAOListener1": "[concat(parameters('namePrefix'),'-AGL1')]"
   },
   "resources": [
     {
